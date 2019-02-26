@@ -18,3 +18,10 @@ struct point
             + ((y > p.y) ? (y - p.y) : (p.y - y));
     }
 };
+
+template<class In>
+In& operator>>(In& in, point& point)
+{
+    in >> point.x >> point.y;
+    return in;
+}
