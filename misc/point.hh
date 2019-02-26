@@ -9,3 +9,10 @@ struct point
     uint x;
     uint y;
 };
+
+template<class In>
+In& operator>>(In& in, point& point)
+{
+    in >> point.x >> point.y;
+    return in;
+}
