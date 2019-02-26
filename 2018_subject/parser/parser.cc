@@ -3,6 +3,8 @@
 #include <vector>
 #include "parser.hh"
 
+static uint count = 0;
+
 uint absdiff(uint a, uint b)
 {
     return a < b ? b-a : a-b;
@@ -16,6 +18,8 @@ uint compute_length(point start, point end)
 template<class In>
 In& operator>>(In& in, ride& r)
 {
+    r.id = count;
+    count += 1;
     in >> r.start >> r.end >> r.time;
     r.length = compute_length(r.start, r.end);
     r.sf = r.time.y - r.length;
