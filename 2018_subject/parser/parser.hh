@@ -6,6 +6,8 @@
 
 struct ride
 {
+    uint id;
+
     point start; // start pos
     point end; // end pos
     point time; // time.x = earliest start, time.y = latest finish
