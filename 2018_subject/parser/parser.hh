@@ -35,3 +35,15 @@ struct ride
         return who ? (t * end.distance(r.start)) : (t * start.distance(r.end));
     }
 };
+
+struct global_data
+{
+    uint rows;
+    uint cols;
+    uint nbVehicles;
+    uint nbRides;
+    uint bonus;
+    uint nbSteps;
+};
+
+struct global_data gd;
