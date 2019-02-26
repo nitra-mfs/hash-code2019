@@ -13,7 +13,6 @@ struct ride
     uint length; // total length of the ride
     uint sf; // latest start
     uint gap;
-    uint distance() const;
     uint time_dist(const ride& r, bool& who) const
     {
         uint a = time.x > r.time.y ? (time.x - r.time.y) : (r.time.y - time.x);
