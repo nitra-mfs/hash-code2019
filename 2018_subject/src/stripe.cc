@@ -2,6 +2,13 @@
 
 using namespace std;
 
+extern global_data gd;
+
+Stripe::Stripe()
+{
+    used_ = new bool[gd.nbRides];
+}
+
 void Stripe::process(const rides& rv)
 {
     for (auto i = 0u; i < rv.size(); ++i)
