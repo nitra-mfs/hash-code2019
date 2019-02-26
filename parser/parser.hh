@@ -1,6 +1,11 @@
 #pragma once
 
-struct ride {
+#include <cstdint>
+
+using uint = uint32_t;
+
+struct ride
+{
     uint a, b; // start pos
     uint x, y; // end pos
     uint s; // earliest start
@@ -11,6 +16,3 @@ struct ride {
     uint gap;
     uint distance() const;
 };
-
-uint R, C, F, N, B, T;
-vector<ride> rides;
