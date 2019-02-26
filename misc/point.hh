@@ -1,5 +1,7 @@
 #pragma once
 
+using uint = uint32_t;
+
 struct point
 {
     point(uint x_ = 0, uint y_ = 0)

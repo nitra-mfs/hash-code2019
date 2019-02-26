@@ -14,5 +14,16 @@ struct ride
     uint length; // total length of the ride
     uint sf; // latest start
     uint gap;
-    uint distance() const;
 };
+
+struct global_data
+{
+    uint rows;
+    uint cols;
+    uint nbVehicles;
+    uint nbRides;
+    uint bonus;
+    uint nbSteps;
+};
+
+struct global_data gd;
