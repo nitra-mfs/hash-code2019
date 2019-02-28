@@ -3,10 +3,11 @@
 #include <cstdint>
 #include <vector>
 #include <string>
+#include <set>
 
 using namespace std;
 
-using strs = vector<std::string>;
+using strs = set<std::string>;
 
 struct pic
 {
@@ -15,7 +16,6 @@ struct pic
     strs tags;
     bool position; //1 vertical 0 horizontale
 };
-
 
 using vp = vector<pic>;
 struct global_data

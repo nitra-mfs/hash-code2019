@@ -19,10 +19,11 @@ In& operator>>(In& in, pic& p)
 
     int i;
     in >> i;
-    p.tags.resize(i);
-    for (auto& t : p.tags)
-        in >> t;
-
+    for (int a = 0; a < i; ++a)
+    {
+        in >> s;
+        p.tags.insert(s);
+    }
     return in;
 }
 
@@ -36,11 +37,4 @@ std::vector<pic> read_input_file(std::istream& in)
 
     gd.pics = pics;
     return pics;
-}
-
-int main()
-{
-    std::ifstream in("test/a_example.txt");
-    auto r = read_input_file(in);
-    return 0;
 }
