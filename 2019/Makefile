@@ -12,5 +12,8 @@ all: ${BIN}
 
 ${BIN}: ${OBJ}
 
+gdb: CXXFLAGS += -g
+gdb: all
+
 clean:
 	${RM} *.o main
