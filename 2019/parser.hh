@@ -3,9 +3,10 @@
 #include <cstdint>
 #include <vector>
 
-using namespace std
+using namespace std;
 
-using strs = vector<std::string>
+using strs = vector<std::string>;
+using vp = vector<pic>;
 
 struct pic
 {
@@ -18,6 +19,7 @@ struct pic
 struct global_data
 {
     int nb_slides;
+    vp pics;
 };
 
 struct global_data gd;
