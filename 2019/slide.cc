@@ -1,6 +1,6 @@
 #include "slide.hh"
 
-extern struct global_data gd;
+extern global_data gd;
 
 using namespace std;
 

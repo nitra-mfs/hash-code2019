@@ -1,6 +1,6 @@
 CC = g++
 CXXFLAGS = -std=c++17 -Wall -Wextra
-CPPFLAGS = -Isrc/
+CPPFLAGS = -I.
 
 SRC = main.cc slide.cc parser.cc vertical.cc
 OBJ = ${SRC:.cc=.o}
