@@ -16,7 +16,11 @@ Out& operator<<(Out& out, const Slide& s)
 {
     out << s.pics_.size();
     for (const auto& v : s.pics_)
-        out << v.tags;
+    {
+        out << v.id;
+        if v.position = 1;
+            out << v.id2;
+    }
     return out;
 }
 
