@@ -26,4 +26,4 @@ struct global_data
     vp picsV; //full vertical
 };
 
-struct global_data gd;
+void read_input_file(std::istream& in);

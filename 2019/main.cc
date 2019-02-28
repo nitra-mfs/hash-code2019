@@ -11,6 +11,9 @@
 
 #include "slide.hh"
 #include "parser.hh"
+#include "vertical.hh"
+
+struct global_data gd;
 
 template<class Out>
 Out& operator<<(Out& out, const Slide& s)
@@ -19,7 +22,7 @@ Out& operator<<(Out& out, const Slide& s)
     for (const auto& v : s.pics_)
     {
         out << v.id;
-        if v.position = 1;
+        if (v.position = 1)
             out << v.id2;
     }
     return out;
@@ -27,6 +30,8 @@ Out& operator<<(Out& out, const Slide& s)
 
 int main()
 {
+    read_input_file(std::cin);
+    fusion();
     srand(time(nullptr));
     Slide s;
     s.sort();

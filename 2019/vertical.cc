@@ -1,4 +1,5 @@
 #include "parser.hh"
+extern struct global_data gd;
 
 /*
 int diff_pic(pic pic1, pic pic2)
