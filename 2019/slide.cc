@@ -33,24 +33,26 @@ void Slide::sort()
     auto bidx = 0u;
     int c = 0;
     for (auto i = 0u; i < pics_.size() - 1; ++i)
+    //for (auto i = 0u; i < 500; ++i)
     {
         b = 0;
         bidx = 0;
         c = 0;
+        int tmp = 0;
         for (auto j = i + 1; j < pics_.size(); ++j)
         {
-            int tmp = min3(pics_[i], pics_[j]);
+            tmp = min3(pics_[i], pics_[j]);
             if (tmp > b)
             {
                 b = tmp;
                 bidx = j;
                 ++c;
-                if (c > 10)
+                if (c > 2)
                     break;
             }
         }
-        cerr << i << " / " << pics_.size() << endl;
-        c = 0;
+        if (!(i % 25))
+            cerr << i << " / " << pics_.size() << endl;
         swap(pics_[bidx], pics_[i + 1]);
     }
 }
