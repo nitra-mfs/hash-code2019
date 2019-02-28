@@ -12,6 +12,7 @@ using strs = set<std::string>;
 struct pic
 {
     int id;
+    int id2 = -1;
 
     strs tags;
     bool position; //1 vertical 0 horizontale
