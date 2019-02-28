@@ -2,15 +2,15 @@ CC = g++
 CXXFLAGS = -std=c++17
 CPPFLAGS = -Isrc/
 
-SRC = *.cc
-OBJ = ${SRC:.cc=*.o}
+SRC = main.cc
+OBJ = ${SRC:.cc=.o}
 BIN = main
 
 .PHONY: all clean
 
-all: main
+all: ${BIN}
 
-main: *.o
+${BIN}: ${OBJ}
 
 clean:
 	${RM} *.o main
