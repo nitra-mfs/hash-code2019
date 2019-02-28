@@ -1,5 +1,5 @@
 CC = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra
+CXXFLAGS = -std=c++17 -Wall -Wextra -O3
 CPPFLAGS = -I.
 
 SRC = main.cc slide.cc parser.cc vertical.cc

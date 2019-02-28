@@ -32,9 +32,10 @@ Out& operator<<(Out& out, const Slide& s)
 int main()
 {
     read_input_file(std::cin);
-    fusion_opti();
+    fusion();
     srand(time(nullptr));
     Slide s;
+    //s.shuffle();
     s.sort();
     //s.some_bubble();
     cout << s;

@@ -1,4 +1,5 @@
 #include "slide.hh"
+#include <iostream>
 
 extern global_data gd;
 
@@ -30,8 +31,12 @@ void Slide::sort()
 {
     int b = 0;
     auto bidx = 0u;
+    int c = 0;
     for (auto i = 0u; i < pics_.size() - 1; ++i)
     {
+        b = 0;
+        bidx = 0;
+        c = 0;
         for (auto j = i + 1; j < pics_.size(); ++j)
         {
             int tmp = min3(pics_[i], pics_[j]);
@@ -39,9 +44,13 @@ void Slide::sort()
             {
                 b = tmp;
                 bidx = j;
-                break;
+                ++c;
+                if (c > 10)
+                    break;
             }
         }
+        cerr << i << " / " << pics_.size() << endl;
+        c = 0;
         swap(pics_[bidx], pics_[i + 1]);
     }
 }
@@ -72,6 +81,7 @@ void Slide::bubble()
 {
     int ssc = score_;
     int ns = 0;
+    int tries = 0;
     while (true)
     {
         int x = rand() % pics_.size();
@@ -82,6 +92,9 @@ void Slide::bubble()
         if (score() > score_)
             break;
         swap(pics_[x], pics_[y]);
+        if (tries > 1)
+            break;
+        ++tries;
     }
 }
 
@@ -110,4 +123,9 @@ void Slide::cut_v()
             pics_.erase(pics_.begin() + i);
         }
     }
+}
+
+void Slide::shuffle()
+{
+    std::random_shuffle(pics_.begin(), pics_.end());
 }

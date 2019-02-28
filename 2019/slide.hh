@@ -3,7 +3,7 @@
 #include "parser.hh"
 #include <algorithm>
 
-#define ITER 100
+#define ITER 500
 
 class Slide
 {
@@ -16,6 +16,7 @@ public:
     void some_bubble();
     void sort_size();
     void cut_v();
+    void shuffle();
     vp pics_;
     int score_;
 };
