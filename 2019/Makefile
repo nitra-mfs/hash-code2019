@@ -1,5 +1,5 @@
 CC = g++
-CXXFLAGS = -std=c++17
+CXXFLAGS = -std=c++17 -Wall -Wextra
 CPPFLAGS = -Isrc/
 
 SRC = main.cc
