@@ -22,7 +22,8 @@ using vp = vector<pic>;
 struct global_data
 {
     int nb_slides;
-    vp pics;
+    vp pics; //full horizontal
+    vp picsV; //full vertical
 };
 
 struct global_data gd;

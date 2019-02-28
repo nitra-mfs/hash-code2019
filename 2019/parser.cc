@@ -27,14 +27,17 @@ In& operator>>(In& in, pic& p)
     return in;
 }
 
-std::vector<pic> read_input_file(std::istream& in)
+void read_input_file(std::istream& in)
 {
     in >> gd.nb_slides;
 
-    auto pics = std::vector<pic>(gd.nb_slides);
-    for (auto& p : pics)
+    for (int i = 0; i < gd.nb_slides; ++i)
+    {
+        pic p;
         in >> p;
-
-    gd.pics = pics;
-    return pics;
+        if (p.position)
+            gd.pics.push_back(p);
+        else
+            gd.picsV.push_back(p);
+    }
 }
