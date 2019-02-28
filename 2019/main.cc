@@ -32,7 +32,7 @@ Out& operator<<(Out& out, const Slide& s)
 int main()
 {
     read_input_file(std::cin);
-    fusion();
+    fusion_opti();
     srand(time(nullptr));
     Slide s;
     s.sort();
