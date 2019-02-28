@@ -38,6 +38,6 @@ void read_input_file(std::istream& in)
         if (p.position)
             gd.pics.push_back(p);
         else
-            gd.picsV.push_back(p);
+            gd.pics.push_back(p);
     }
 }

@@ -19,7 +19,7 @@ Out& operator<<(Out& out, const Slide& s)
     for (const auto& v : s.pics_)
     {
         out << v.id;
-        if v.position = 1;
+        if (v.position)
             out << v.id2;
     }
     return out;
