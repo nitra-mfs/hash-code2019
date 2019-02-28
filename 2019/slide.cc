@@ -15,3 +15,21 @@ int Slide::score()
     }
     return score_;
 }
+int min3(const pic& a, const pic& b)
+{
+   int x = a.tags.size();
+   int y = 0;
+   int z = b.tags.size();
+   for (const auto& s : b.tags)
+   {
+       if (a.tags.find(s) != a.tags.end())
+       {
+           --x;
+           ++y;
+           --z;
+       }
+   } 
+   x = x < y ? x : y;
+   x = z < x ? z : x;
+   return x;
+}
