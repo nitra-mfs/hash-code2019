@@ -2,7 +2,7 @@ CC = g++
 CXXFLAGS = -std=c++17 -Wall -Wextra
 CPPFLAGS = -Isrc/
 
-SRC = main.cc
+SRC = main.cc slide.cc parser.cc
 OBJ = ${SRC:.cc=.o}
 BIN = main
 
