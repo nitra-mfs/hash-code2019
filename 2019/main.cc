@@ -7,6 +7,7 @@
 #include <cstdint>
 #include <string>
 #include <fstream>
+#include <ctime>
 
 #include "slide.hh"
 #include "parser.hh"
@@ -26,5 +27,10 @@ Out& operator<<(Out& out, const Slide& s)
 
 int main()
 {
+    srand(time(nullptr));
+    Slide s;
+    s.sort();
+    s.cut_v();
+    //s.some_bubble();
     return 0;
 }
