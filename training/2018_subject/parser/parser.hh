@@ -2,17 +2,31 @@
 
 #include <cstdint>
 
-using uint = uint32_t;
+#include "../../misc/point.hh"
 
 struct ride
 {
-    uint a, b; // start pos
-    uint x, y; // end pos
-    uint s; // earliest start
-    uint f; // latest finish
+    uint id;
+
+    point start; // start pos
+    point end; // end pos
+    point time; // time.x = earliest start, time.y = latest finish
 
     uint length; // total length of the ride
     uint sf; // latest start
     uint gap;
-    uint distance() const;
+    uint time_dist(const ride& r, bool& who) const;
+    uint distance(const ride& r) const;
 };
+
+struct global_data
+{
+    uint rows;
+    uint cols;
+    uint nbVehicles;
+    uint nbRides;
+    uint bonus;
+    uint nbSteps;
+};
+
+struct global_data gd;

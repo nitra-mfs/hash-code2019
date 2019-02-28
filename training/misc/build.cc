@@ -4,6 +4,7 @@
 #include <set>
 #include <cstdlib>
 #include <limits>
+#include <iterator>
 #include <cstdint>
 #include <string>
 #include <fstream>
@@ -183,6 +184,11 @@ uint max_score()
 	return s;
 }
 
+float f(float bonus, float time, float score)
+{
+        return bonus + (score / time);
+}
+
 void greedy(set<uint>& avail)
 {
 	while (true) {
@@ -195,17 +201,20 @@ void greedy(set<uint>& avail)
 				auto d = distance(v.x, v.y, r.a, r.b);
 				if (v.t + d + r.length > r.f)
 					continue;
+                float bonus;
+                float time;
+                float score;
 				if (v.t + d <= r.s) {
-					bonus = b;
-					temps = r.s - v.t + r.length;
+					bonus = r.b;
+					time = r.s - v.t + r.length;
 					score = r.length;
 				} else {
 					bonus = 0;
-					temps = d + r.length;
+					time = d + r.length;
 					score = r.length;
 				}
 
-				float s = f(bonus, temps, score);
+				float s = f(bonus, time, score);
 				if (s < bestvalue) {
 					bestvalue = s;
 					bestr = i;
