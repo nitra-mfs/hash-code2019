@@ -25,5 +25,3 @@ struct global_data
     vp pics; //full horizontal
     vp picsV; //full vertical
 };
-
-struct global_data gd;

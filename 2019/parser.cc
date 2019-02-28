@@ -6,6 +6,7 @@
 #include <string>
 
 static uint count = 0;
+global_data gd;
 
 template <class In>
 In& operator>>(In& in, pic& p)
