@@ -6,7 +6,7 @@
 #include <string>
 
 static uint count = 0;
-global_data gd;
+extern global_data gd;
 
 template <class In>
 In& operator>>(In& in, pic& p)
@@ -39,6 +39,6 @@ void read_input_file(std::istream& in)
         if (p.position)
             gd.pics.push_back(p);
         else
-            gd.pics.push_back(p);
+            gd.picsV.push_back(p);
     }
 }

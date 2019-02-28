@@ -16,7 +16,6 @@ public:
     void some_bubble();
     void sort_size();
     void cut_v();
-protected:
     vp pics_;
     int score_;
 };

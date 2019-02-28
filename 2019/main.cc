@@ -13,7 +13,7 @@
 #include "parser.hh"
 #include "vertical.hh"
 
-struct global_data gd;
+global_data gd;
 
 template<class Out>
 Out& operator<<(Out& out, const Slide& s)
@@ -22,8 +22,9 @@ Out& operator<<(Out& out, const Slide& s)
     for (const auto& v : s.pics_)
     {
         out << v.id;
-        if (v.position = 1)
-            out << v.id2;
+        if (v.position)
+            out << ' ' << v.id2;
+        out << endl;
     }
     return out;
 }
@@ -35,7 +36,7 @@ int main()
     srand(time(nullptr));
     Slide s;
     s.sort();
-    s.cut_v();
     //s.some_bubble();
+    cout << s;
     return 0;
 }

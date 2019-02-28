@@ -30,7 +30,7 @@ void Slide::sort()
 {
     int b = 0;
     auto bidx = 0u;
-    for (auto i = 0u; i < pics_.size(); ++i)
+    for (auto i = 0u; i < pics_.size() - 1; ++i)
     {
         for (auto j = i + 1; j < pics_.size(); ++j)
         {
