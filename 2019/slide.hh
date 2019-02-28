@@ -3,7 +3,7 @@
 #include "parser.hh"
 #include <algorithm>
 
-#define ITER 1000
+#define ITER 100
 
 class Slide
 {

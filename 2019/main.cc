@@ -18,11 +18,11 @@ global_data gd;
 template<class Out>
 Out& operator<<(Out& out, const Slide& s)
 {
-    out << s.pics_.size();
+    out << s.pics_.size() << endl;
     for (const auto& v : s.pics_)
     {
         out << v.id;
-        if (v.position)
+        if (v.id2 != -1)
             out << ' ' << v.id2;
         out << endl;
     }

@@ -39,6 +39,7 @@ void Slide::sort()
             {
                 b = tmp;
                 bidx = j;
+                break;
             }
         }
         swap(pics_[bidx], pics_[i + 1]);
