@@ -2,11 +2,11 @@
 
 #include <cstdint>
 #include <vector>
+#include <string>
 
 using namespace std;
 
 using strs = vector<std::string>;
-using vp = vector<pic>;
 
 struct pic
 {
@@ -16,6 +16,8 @@ struct pic
     bool position; //1 vertical 0 horizontale
 };
 
+
+using vp = vector<pic>;
 struct global_data
 {
     int nb_slides;

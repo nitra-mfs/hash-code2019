@@ -3,68 +3,44 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include <string>
 
 static uint count = 0;
 
-uint absdiff(uint a, uint b)
-{
-    return a < b ? b - a : a - b;
-}
-
-uint compute_length(point start, point end)
-{
-    return absdiff(start.x, end.x) + absdiff(start.y, end.y);
-}
-
 template <class In>
-In& operator>>(In& in, ride& r)
+In& operator>>(In& in, pic& p)
 {
-    r.id = count;
+    p.id = count;
     count += 1;
-    in >> r.start >> r.end >> r.time;
-    r.length = compute_length(r.start, r.end);
-    r.sf = r.time.y - r.length;
-    r.gap = r.sf - r.time.x;
+
+    std::string s;
+    in >> s;
+    p.position = s == "H";
+
+    int i;
+    in >> i;
+    p.tags.resize(i);
+    for (auto& t : p.tags)
+        in >> t;
+
     return in;
 }
 
-std::vector<ride> read_input_file(std::istream& in)
+std::vector<pic> read_input_file(std::istream& in)
 {
-    in >> gd.rows >> gd.cols >> gd.nbVehicles >> gd.nbRides >> gd.bonus
-        >> gd.nbSteps;
+    in >> gd.nb_slides;
 
-    auto rides = std::vector<ride>(gd.nbRides);
-    for (auto& r : rides)
-        in >> r;
+    auto pics = std::vector<pic>(gd.nb_slides);
+    for (auto& p : pics)
+        in >> p;
 
-    return rides;
-}
-
-uint ride::time_dist(const ride& r, bool& who) const
-{
-    uint a = time.x > r.time.y ? (time.x - r.time.y) : (r.time.y - time.x);
-    uint b = time.y > r.time.x ? (time.y - r.time.x) : (r.time.x - time.y);
-    if (a < b)
-    {
-        who = false; // Depart de this, Arrivee de r
-        return a;
-    } else
-    {
-        who = true;
-        return b;
-    }
-}
-
-uint ride::distance(const ride& r) const
-{
-    bool who = false;
-    uint t = time_dist(r, who);
-    return who ? (t * end.distance(r.start)) : (t * start.distance(r.end));
+    gd.pics = pics;
+    return pics;
 }
 
 int main()
 {
-    std::ifstream in("../tests/a_example.in");
+    std::ifstream in("test/a_example.txt");
     auto r = read_input_file(in);
     return 0;
 }
