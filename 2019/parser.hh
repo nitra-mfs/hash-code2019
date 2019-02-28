@@ -13,6 +13,7 @@ struct pic
 {
     int id;
     int id2 = -1;
+    bool isUsed = false;
 
     strs tags;
     bool position; //1 vertical 0 horizontale
